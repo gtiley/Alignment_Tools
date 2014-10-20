@@ -1,0 +1,12 @@
+DNA, test1_Pos1= 1-21\3
+DNA, test1_Pos2= 2-21\3
+DNA, test1_Pos3= 3-21\3
+DNA, test4_Pos1= 22-45\3
+DNA, test4_Pos2= 23-45\3
+DNA, test4_Pos3= 24-45\3
+DNA, test3_Pos1= 46-60\3
+DNA, test3_Pos2= 47-60\3
+DNA, test3_Pos3= 48-60\3
+DNA, test2_Pos1= 61-75\3
+DNA, test2_Pos2= 62-75\3
+DNA, test2_Pos3= 63-75\3

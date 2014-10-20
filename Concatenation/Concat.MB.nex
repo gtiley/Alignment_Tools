@@ -1,0 +1,29 @@
+#NEXUS
+begin data;
+dimensions ntax=4 nchar=75;
+format missing=N gap=- matchchar=. datatype=DNA;
+matrix
+4		ACCCCCCCAAAAATTTTTGTGNNNNNNNNNGAACCCATTGAGTCANNNNNNNNNNNNNNNATGTGG---TGCACC
+1		ATGCCCGCAAAAATA---GTGATGGTG------CCCATTGTGTCAATGCAGATTTGTCCCATGTGGTGGTGGAGG
+3		ACCCCCCCAAAAATTTTTGTGATGGTGGAAGAACCCATTGAGTCAATGCAAAATTGACTCATGTGGTGGTGCAGC
+2		AGGCCCCCAAAAATATTTGTGNNNNNNNNNNNNNNNNNNNNNNNNATGCAAAATTGTCCCATGTGGTGGTGCAGC
+;
+end;
+BEGIN mrbayes;
+charset test1_Pos1 = 1-21\3;
+charset test1_Pos2 = 2-21\3;
+charset test1_Pos3 = 3-21\3;
+charset test4_Pos1 = 22-45\3;
+charset test4_Pos2 = 23-45\3;
+charset test4_Pos3 = 24-45\3;
+charset test3_Pos1 = 46-60\3;
+charset test3_Pos2 = 47-60\3;
+charset test3_Pos3 = 48-60\3;
+charset test2_Pos1 = 61-75\3;
+charset test2_Pos2 = 62-75\3;
+charset test2_Pos3 = 63-75\3;
+partition Names = 12: test1_Pos1, test1_Pos2, test1_Pos3, test4_Pos1, test4_Pos2, test4_Pos3, test3_Pos1, test3_Pos2, test3_Pos3, test2_Pos1, test2_Pos2, test2_Pos3;
+set partition = Names;
+lset applyto=(1,2,3,4,5,6,7,8,9,10,11,12) nst=6 rates=gamma;
+mcmc ngen=10000000 nruns=4 nchains=4 samplefreq=100;
+end;
